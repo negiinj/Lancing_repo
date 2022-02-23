@@ -1,5 +1,5 @@
 const {default: Education} = require('../components/Education');
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -18,6 +18,8 @@ import * as theme from '../constants/theme';
 const Tab = createMaterialTopTabNavigator();
 
 const Freelancer_Page = props => {
+  const [data, setData] = useState({});
+
   return (
     <View style={styles.container}>
       {/* Header */}
@@ -184,7 +186,7 @@ const Freelancer_Page = props => {
                 borderColor: theme.colors.silver,
               },
             ]}>
-            <CommunityIcon name="chat" size={30} color={theme.colors.black} />
+            <CommunityIcon name="chat" size={30} color={theme.colors.white} />
           </View>
           <View
             style={[
@@ -215,7 +217,8 @@ function FeedScreen() {
     );
   }
   
-  function NotificationsScreen() {
+  function NotificationsScreen(props) {
+    const data = props.data;
     return (
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <Text>Notifications!</Text>

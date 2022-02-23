@@ -28,9 +28,9 @@ const Stack = createStackNavigator();
 //     </NavigationContainer>
     
 //   );
-// };
+// }; //CODES WITHOUT ONBOARDING SECREEN ENDS HERE
 const App = () => {
-  const [isAppFirstLaunched, setIsAppFirstLaunched] = React.useState(null); //MAKE IT TRURE TO KEEP SHOWING and command else false
+  const [isAppFirstLaunched, setIsAppFirstLaunched] = React.useState(false); //MAKE IT TRURE TO KEEP SHOWING and command else false
 
   React.useEffect(async () => {
     const appData = await AsyncStorage.getItem('isAppFirstLaunched');
