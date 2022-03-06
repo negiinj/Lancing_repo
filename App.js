@@ -7,6 +7,8 @@ import User_Page from './src/screens/User_Page';
 import OnboardingScreen from './src/screens/OnBoardingScreen';
 import 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
 const Stack = createStackNavigator();
 
 // const Stack = createStackNavigator();
@@ -38,7 +40,7 @@ const App = () => {
       setIsAppFirstLaunched(true);
       AsyncStorage.setItem('isAppFirstLaunched', 'false');
     } else {
-      setIsAppFirstLaunched(false);
+      setIsAppFirstLaunched(false); //AND MAKE THIS COMMENT
     }
 
     // AsyncStorage.removeItem('isAppFirstLaunched');
@@ -57,6 +59,7 @@ const App = () => {
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="User_Page" component={User_Page}/>
         </Stack.Navigator>
+        
       </NavigationContainer>
     )
   );

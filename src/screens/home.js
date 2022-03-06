@@ -5,13 +5,13 @@ import * as company from '../constants/jobs';
 import Company from '../components/company';
 import * as Freelancer from '../constants/Freelancers';
 import Jobs from '../components/jobs';
-import User_Page from './User_Page';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import FilterModal from '../components/filterModal';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
 
 export default function Home ({ navigation }) {
     const [filterVisible, setFilterVisible] = useState(false)
@@ -33,7 +33,7 @@ export default function Home ({ navigation }) {
 
                 {/* Header */}
                 <View  style={styles.header}>
-                    <TouchableOpacity>
+                    <TouchableOpacity >
                     <FontAwesome5 name="bars" size={25} color={theme.colors.black} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('User_Page')}>
@@ -62,7 +62,7 @@ export default function Home ({ navigation }) {
                         </TouchableOpacity>
                     </View>
 
-                    {/* Popular Companies */}
+                    {/* Suggested Profiles */}
                     <View style={styles.popularContainer}>
                         <Text style={[styles.popularText, {marginLeft: 20}]}>Suggested Profiles</Text>
                         <FlatList 
@@ -81,7 +81,7 @@ export default function Home ({ navigation }) {
                             }} />
                     </View>
 
-                    {/* Recent Jobs */}
+                    {/* Other Freelancer */}
                     <View style={[styles.popularContainer, {marginRight: 20, marginLeft: 20, marginBottom: 70}]}>
                         <Text style={styles.popularText}>Other Freelancers</Text>
                         <FlatList 
