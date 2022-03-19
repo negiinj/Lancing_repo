@@ -13,6 +13,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 
+
 export default function Home ({ navigation }) {
     const [filterVisible, setFilterVisible] = useState(false)
 
@@ -36,7 +37,7 @@ export default function Home ({ navigation }) {
                     <TouchableOpacity >
                     <FontAwesome5 name="bars" size={25} color={theme.colors.black} />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('User_Page')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('SignUpScreen')}>
                         <Icon name="person-outline" size={30} color={theme.colors.black} />
                     </TouchableOpacity>
                 </View>
