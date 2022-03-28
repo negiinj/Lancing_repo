@@ -6,16 +6,18 @@ import {
   Text,
   TextInput,
   Image,
-  StyleSheet,
+  StyleSheet, Button
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Picker} from '@react-native-community/picker';
 import * as theme from '../constants/theme';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
+import {RollInLeft} from 'react-native-reanimated';
+import User_Page from './User_Page';
 
 
 const SignUpScreen = ({navigation}) => {
-  const [category, setCategory] = useState('Freelancer')
+  // const [category, setCategory] = useState('Freelancer')   //IS FOR THE PICKER
   return (
     <SafeAreaView
       style={{
@@ -24,7 +26,7 @@ const SignUpScreen = ({navigation}) => {
         backgroundColor: theme.colors.white,
       }}>
       <ScrollView showsVerticalScrollIndicator={false}>
-      <View
+        <View
           style={{
             flexDirection: 'row',
             marginTop: 40,
@@ -35,12 +37,14 @@ const SignUpScreen = ({navigation}) => {
             LANCING
           </Text> */}
           <TouchableOpacity onPress={() => navigation.goBack()}>
-                      <View style={{alignContent:'flex-start', alignItems:'flex-start'}}>
-            <Icon
-              name="keyboard-arrow-left"
-              size={30}
-              color={theme.colors.black}
-            /></View>
+            <View
+              style={{alignContent: 'flex-start', alignItems: 'flex-start'}}>
+              <Icon
+                name="keyboard-arrow-left"
+                size={30}
+                color={theme.colors.black}
+              />
+            </View>
           </TouchableOpacity>
 
           <Image
@@ -66,16 +70,24 @@ const SignUpScreen = ({navigation}) => {
           </Text>
         </View>
         <View style={{marginTop: 20}}>
-        <Text >Select User Type</Text>
-        <View style={STYLES.pickerContainer} >
-                    <Picker
-                        selectedValue={category}
-                        onValueChange={(itemValue, itemIndex) => setCategory(itemValue)}>
-                        <Picker.Item label="Freelancer" value="Freelancer" />
-                        <Picker.Item label="Company" value="Company" />
-                        
-                    </Picker>
-                </View>
+          {/* <Text>Select User Type</Text>
+          <View style={STYLES.pickerContainer}>
+            <Picker
+              selectedValue={category}
+              onValueChange={(itemValue, itemIndex) => setCategory(itemValue)}>
+              <Picker.Item
+                label="Freelancer"
+                value="Freelancer"
+                category={'freelancer'}
+              />
+              <Picker.Item
+                label="Company"
+                value="Company"
+                category={'company'}
+              />
+            </Picker>
+          </View> */}
+
           <View style={STYLES.inputContainer}>
             <Icon
               name="person-outline"
@@ -83,7 +95,7 @@ const SignUpScreen = ({navigation}) => {
               size={20}
               style={STYLES.inputIcon}
             />
-            <TextInput placeholder="Name(*)" style={STYLES.input} />
+            <TextInput placeholder="Name*" style={STYLES.input} />
           </View>
           <View style={STYLES.inputContainer}>
             <Icon
@@ -92,7 +104,7 @@ const SignUpScreen = ({navigation}) => {
               size={20}
               style={STYLES.inputIcon}
             />
-            <TextInput placeholder="Email(*)" style={STYLES.input} />
+            <TextInput placeholder="Email*" style={STYLES.input} />
           </View>
           <View style={STYLES.inputContainer}>
             <Icon
@@ -102,16 +114,25 @@ const SignUpScreen = ({navigation}) => {
               style={STYLES.inputIcon}
             />
             <TextInput
-              placeholder="Password(*)"
+              placeholder="Password*"
               style={STYLES.input}
               secureTextEntry
             />
           </View>
+          <TouchableOpacity onPress={() => navigation.navigate('RegisterFreelancer')}>
           <View style={STYLES.btnPrimary}>
             <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 18}}>
-              Sign Up
+              Sign Up As Freelancer
             </Text>
           </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('RegisterCompany')}>
+          <View style={STYLES.btnPrimary}>
+            <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 18}}>
+              Sign Up As Company
+            </Text>
+          </View>
+          </TouchableOpacity>
           <View
             style={{
               marginVertical: 20,
@@ -149,7 +170,6 @@ const SignUpScreen = ({navigation}) => {
             </View>
           </View>
         </View>
-
         <View
           style={{
             flexDirection: 'row',
@@ -159,9 +179,9 @@ const SignUpScreen = ({navigation}) => {
             marginBottom: 20,
           }}>
           <Text style={{color: theme.colors.black, fontWeight: 'bold'}}>
-            Already have an account ? 
+            Already have an account ?
           </Text>
-          <TouchableOpacity onPress={() =>  navigation.navigate('SignInScreen')}>
+          <TouchableOpacity onPress={() => navigation.navigate('SignInScreen')}>
             <Text style={{color: theme.colors.blueGrey, fontWeight: 'bold'}}>
               Sign in
             </Text>
@@ -171,6 +191,7 @@ const SignUpScreen = ({navigation}) => {
     </SafeAreaView>
   );
 };
+
 const STYLES = StyleSheet.create({
   inputContainer: {flexDirection: 'row', marginTop: 20},
   input: {
@@ -194,7 +215,7 @@ const STYLES = StyleSheet.create({
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 50,
+    marginTop: 20,
   },
 
   btnSecondary: {
@@ -223,8 +244,7 @@ const STYLES = StyleSheet.create({
     borderBottomWidth: 0.5,
     flex: 1,
     fontSize: 16,
-    
-},
+  },
 
   line: {height: 1, width: 30, backgroundColor: '#a5a5a5'},
 });

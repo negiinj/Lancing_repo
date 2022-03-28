@@ -117,7 +117,7 @@ const styles =StyleSheet.create({
         marginLeft: 20,
         fontWeight: 'bold',
         fontSize: theme.sizes.h6,
-        color: theme.colors.black 
+        color: theme.colors.silver 
     },
     searchContainer: {
         marginTop: 15,
