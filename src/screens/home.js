@@ -47,8 +47,8 @@ export default function Home ({ navigation }) {
                      
                     {/* Title */}
                     <View>
-                        <Text style={styles.title, { fontSize: 20, margin: 20}}>Hi User,</Text>
-                        <Text style={styles.title, {fontSize:24, paddingLeft:20, fontWeight:'bold'}}>Find Your Perfect Team Member</Text>
+                        <Text style={styles.title, { color: theme.colors.silver,fontSize: 20, margin: 20}}>Hi User,</Text>
+                        <Text style={styles.title, {color: theme.colors.silver,fontSize:24, paddingLeft:20, fontWeight:'bold'}}>Find Your Perfect Team Member</Text>
                     </View>
 
                     {/* Search */}
@@ -117,7 +117,7 @@ const styles =StyleSheet.create({
         marginLeft: 20,
         fontWeight: 'bold',
         fontSize: theme.sizes.h6,
-        color: theme.colors.silver 
+        color: theme.colors.white
     },
     searchContainer: {
         marginTop: 15,

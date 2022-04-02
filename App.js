@@ -56,9 +56,9 @@ const App = () => {
           {isAppFirstLaunched && (
             <Stack.Screen name="OnboardingScreen" component={OnboardingScreen}/>
           )}
-          <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="SignUpScreen" component={SignUpScreen}/> 
           <Stack.Screen name="SignInScreen" component={SignInScreen}/> 
+          <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="RegisterFreelancer" component={RegisterFreelancer}/> 
           <Stack.Screen name="RegisterCompany" component={RegisterCompany}/> 
           {/* User_Page , SignInScreen*/}

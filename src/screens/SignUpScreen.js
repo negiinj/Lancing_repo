@@ -36,7 +36,7 @@ const SignUpScreen = ({navigation}) => {
           {/* <Text style={{fontWeight: 'bold', fontSize: 22, color: theme.colors.black}}>
             LANCING
           </Text> */}
-          <TouchableOpacity onPress={() => navigation.goBack()}>
+          {/* <TouchableOpacity onPress={() => navigation.goBack()}>
             <View
               style={{alignContent: 'flex-start', alignItems: 'flex-start'}}>
               <Icon
@@ -45,7 +45,7 @@ const SignUpScreen = ({navigation}) => {
                 color={theme.colors.black}
               />
             </View>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
 
           <Image
             style={STYLES.logo}

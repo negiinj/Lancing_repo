@@ -22,13 +22,13 @@ const slides = [
     id: '1',
     image: require('../images/1.jpg'),
     title: 'Create a Project ',
-    subtitle: 'Lancing app is a free and easy platform to post a job.',
+    subtitle: 'Lancing app is a free and easy platform to post a job or a project.',
   },
   {
     id: '2',
     image: require('../images/2.jpg'),
-    title: 'Easy Matching',
-    subtitle: 'Through our matching system, both' //business owners and freelancers will be finding their perfect match!',
+    title: 'Pefect Matching',
+    subtitle: 'Find your perfect team through our unique matching algorithm' //business owners and freelancers will be finding their perfect match!',
   },
   {
     id: '3',
@@ -178,6 +178,7 @@ const OnboardingScreen = ({navigation}) => {
       />
       <Footer />
     </SafeAreaView>
+    
   );
 };
 
