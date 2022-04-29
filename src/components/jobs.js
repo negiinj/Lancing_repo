@@ -12,7 +12,7 @@ const Jobs = ({item}) => {
                 borderRadius={10}
                 style={{width: 40, height: 40}} />
             <View style={styles.textContainer}>
-                <Text style={styles.jobTitle}>{item.job}</Text>
+                <Text style={styles.jobTitle}>{item.company}</Text>
                 <Text style={styles.jobLocation}>{item.location}</Text>
             </View>
             <View style={styles.iconContainer}>

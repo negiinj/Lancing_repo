@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { LogBox } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -7,11 +7,12 @@ import User_Page from './src/screens/User_Page';
 import OnboardingScreen from './src/screens/OnBoardingScreen';
 import 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 import SignInScreen from './src/screens/SignInScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
 import RegisterFreelancer from './src/screens/RegisterFreelancer';
 import RegisterCompany from './src/screens/RegisterCompany';
+import Freelancer_Page from './src/screens/Freelancer_Page';
+import AppStack from './src/Navigation/AppStack'
 const Stack = createStackNavigator();
 
 // const Stack = createStackNavigator();
@@ -35,7 +36,7 @@ const Stack = createStackNavigator();
 //   );
 // }; //CODES WITHOUT ONBOARDING SECREEN ENDS HERE
 const App = () => {
-  const [isAppFirstLaunched, setIsAppFirstLaunched] = React.useState(true); //MAKE IT TRURE TO KEEP SHOWING and comment else false
+  const [isAppFirstLaunched, setIsAppFirstLaunched] = React.useState(false); //MAKE IT TRURE TO KEEP SHOWING and comment else false
 
   React.useEffect(async () => {
     const appData = await AsyncStorage.getItem('isAppFirstLaunched');
@@ -43,7 +44,7 @@ const App = () => {
       setIsAppFirstLaunched(true);
       AsyncStorage.setItem('isAppFirstLaunched', 'false');
     } else {
-      // setIsAppFirstLaunched(false); //AND MAKE THIS COMMENT
+      setIsAppFirstLaunched(false); //AND MAKE THIS COMMENT
     }
 
     // AsyncStorage.removeItem('isAppFirstLaunched');
@@ -56,14 +57,14 @@ const App = () => {
           {isAppFirstLaunched && (
             <Stack.Screen name="OnboardingScreen" component={OnboardingScreen}/>
           )}
-          <Stack.Screen name="SignUpScreen" component={SignUpScreen}/> 
-          <Stack.Screen name="SignInScreen" component={SignInScreen}/> 
+          {/* <Stack.Screen name="SignUpScreen" component={SignUpScreen}/>  
+          <Stack.Screen name="SignInScreen" component={SignInScreen}/>  */}
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="RegisterFreelancer" component={RegisterFreelancer}/> 
           <Stack.Screen name="RegisterCompany" component={RegisterCompany}/> 
           {/* User_Page , SignInScreen*/}
         </Stack.Navigator>
-        
+        <Stack.Screen name='AppStack' component={AppStack}/>
       </NavigationContainer>
     )
   );

@@ -10,6 +10,7 @@ import FilterModal from '../components/filterModal';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import User_Page from './User_Page';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 
@@ -31,11 +32,10 @@ export default function Home ({ navigation }) {
             </Modal>
 
             <View>
-
                 {/* Header */}
-                <View  style={styles.header}>
-                    <TouchableOpacity >
-                    <FontAwesome5 name="bars" size={25} color={theme.colors.black} />
+                <View  style={styles.header}>         
+                    <TouchableOpacity >      
+                    <FontAwesome5 name="bars" size={25} color={theme.colors.black} />  
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('SignUpScreen')}>
                         <Icon name="person-outline" size={30} color={theme.colors.black} />
@@ -100,6 +100,7 @@ export default function Home ({ navigation }) {
        </View>
     )
 }
+
 
 const styles =StyleSheet.create({
     header: { // is for the top bar (profile of user and setting)

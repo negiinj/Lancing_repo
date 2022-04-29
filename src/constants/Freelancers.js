@@ -3,10 +3,10 @@ const Freelancers = [
         id: '1',
         company: 'Jack Walton',
         logo: require('../images/jack.jpg'),
-        job: 'Database Designer',
+        job: 'Database Designser',
         location: 'New York, US',
-        time: ' Part Time',
-        loc: 'Anywhere',
+        time: ' 4.8/5',
+        loc: '75%',
         About: '  Experienced and dedicated Data Analyst with several years of experience identifying efficiencies and problem areas within data streams.',
         Exp : [
             {
@@ -59,13 +59,13 @@ const Freelancers = [
     },
     {
         id: '2',
-        company: 'Nike',
+        company: 'David Perez',
         logo: require('../images/dani.jpg'),
         job: 'Senior UI Designer',
         salary: '$50K - $90K',
         location: 'California, US',
-        time: 'Remote',
-        loc: 'Anywhere',
+        time: '4/5',
+        loc: '68%',
         About: 'Nike is looking for a Senior UI Designer to join its fast growing team. This work will report to the Project Manager and work alongside the development team to help us grow our business.',
         Exp : [
             {
