@@ -5,12 +5,12 @@ import Home from '../screens/home';
 
 const Drawer = createDrawerNavigator();
 
-const AppStack = () => {
+const AppStack = ({navigation}) => {
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator screenOptions={{headerShown: false}}>
       <Drawer.Screen
-        name="User_Page"
-        component={User_Page}
+        name="home"
+        component={Home}
       />
    
     </Drawer.Navigator>

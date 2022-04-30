@@ -34,7 +34,7 @@ export default function Home ({ navigation }) {
             <View>
                 {/* Header */}
                 <View  style={styles.header}>         
-                    <TouchableOpacity >      
+                    <TouchableOpacity onPress={() => navigation.openDrawer()}>      
                     <FontAwesome5 name="bars" size={25} color={theme.colors.black} />  
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('SignUpScreen')}>
